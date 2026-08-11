@@ -13,6 +13,26 @@ mint address and a pump.fun link.
 | `deploy_token` | Creates a coin on pump.fun: uploads metadata (name, ticker, description, image, socials) to pump.fun IPFS, then builds, signs and sends the `createV2` transaction with an optional dev buy in the same transaction. Returns the mint address, transaction signature and pump.fun link. |
 | `wallet_info` | Shows the deploy wallet address and its SOL balance. |
 
+## Install
+
+Open the plugin marketplace in your client (Plugins → Marketplace), find
+**GrokBotfun** and press **Add**. The configure dialog then asks for the two
+variables below and wires the MCP server up for you.
+
+To install manually instead, add this to your MCP config:
+
+```json
+{
+  "mcpServers": {
+    "grokbotfun": {
+      "command": "npx",
+      "args": ["-y", "grokbotfun"],
+      "env": { "PUMPFUN_PRIVATE_KEY": "<base58 key of a dedicated deploy wallet>" }
+    }
+  }
+}
+```
+
 ## Setup
 
 On install you are asked for:

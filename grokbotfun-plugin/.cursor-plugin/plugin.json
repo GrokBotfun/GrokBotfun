@@ -1,5 +1,4 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "grokbotfun",
   "displayName": "GrokBotfun",
   "version": "1.0.0",
@@ -37,7 +36,6 @@
         "type": "string",
         "title": "Deploy wallet private key (base58)",
         "description": "Secret key of a dedicated hot wallet used to sign deploys, in the base58 format exported by Phantom. Fund it only with the SOL you intend to spend on launches. Never use your main wallet.",
-        "writeOnly": true,
         "minLength": 32
       },
       "SOLANA_RPC_URL": {

@@ -1,6 +1,6 @@
 {
   "name": "grokbotfun",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "MCP server that lets AI agents (Grok Bot, Cursor, Claude Code, etc.) deploy tokens on pump.fun — create + optional dev buy in one transaction",
   "type": "module",
   "bin": { "grokbotfun": "index.js" },

@@ -1,0 +1,16 @@
+{
+  "name": "grokbotfun",
+  "owner": {
+    "name": "GrokBotfun"
+  },
+  "metadata": {
+    "description": "Deploy pump.fun tokens straight from your AI agent"
+  },
+  "plugins": [
+    {
+      "name": "grokbotfun",
+      "source": "grokbotfun-plugin",
+      "description": "Deploy tokens on pump.fun straight from your agent: create a coin with metadata, image and socials, with an optional dev buy in the same atomic transaction."
+    }
+  ]
+}
