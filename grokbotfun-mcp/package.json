@@ -1,0 +1,35 @@
+{
+  "name": "grokbotfun",
+  "version": "0.1.0",
+  "description": "MCP server that lets AI agents (Grok Bot, Cursor, Claude Code, etc.) deploy tokens on pump.fun — create + optional dev buy in one transaction",
+  "type": "module",
+  "bin": { "grokbotfun": "index.js" },
+  "files": ["index.js", "README.md"],
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "author": "GrokBotfun",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrokBotfun/GrokBotfun.git"
+  },
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "pump.fun",
+    "pumpfun",
+    "solana",
+    "token",
+    "deploy",
+    "grok",
+    "cursor",
+    "ai-agent"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@pump-fun/pump-sdk": "^1.36.0",
+    "@solana/web3.js": "1.95.8",
+    "bn.js": "^5.2.1",
+    "bs58": "^5.0.0",
+    "zod": "^3.23.8"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "grokbotfun",
+  "displayName": "GrokBotfun",
+  "description": "Deploy tokens on pump.fun straight from your agent: create a coin with metadata, image and socials, with an optional dev buy in the same transaction. Signs locally with your own wallet key.",
+  "version": "0.1.0",
+  "author": { "name": "GrokBotfun" },
+  "license": "MIT",
+  "repository": "https://github.com/GrokBotfun/GrokBotfun",
+  "homepage": "https://github.com/GrokBotfun/GrokBotfun",
+  "keywords": ["pump.fun", "solana", "token", "deploy", "memecoin", "crypto"],
+  "category": "Crypto",
+  "tags": ["solana", "pump.fun", "web3"],
+  "mcpServers": "./mcp.json",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "pumpfunPrivateKey": {
+        "type": "string",
+        "title": "Deploy wallet private key (base58)",
+        "description": "Secret key of a DEDICATED hot wallet used to sign deploys. Fund it only with the SOL you intend to spend. Never use your main wallet.",
+        "writeOnly": true,
+        "minLength": 32
+      },
+      "solanaRpcUrl": {
+        "type": "string",
+        "title": "Solana RPC URL",
+        "description": "Optional custom RPC endpoint (Helius/QuickNode recommended for production launches).",
+        "default": "https://api.mainnet-beta.solana.com"
+      }
+    },
+    "required": ["pumpfunPrivateKey"]
+  }
+}

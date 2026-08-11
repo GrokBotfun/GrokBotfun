@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "grokbotfun": {
+      "command": "npx",
+      "args": ["-y", "grokbotfun"],
+      "env": {
+        "PUMPFUN_PRIVATE_KEY": "${pumpfunPrivateKey}",
+        "SOLANA_RPC_URL": "${solanaRpcUrl}"
+      }
+    }
+  }
+}

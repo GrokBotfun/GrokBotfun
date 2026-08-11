@@ -1,0 +1,16 @@
+# deps / builds
+node_modules/
+dist/
+
+# local-only files
+.cursor/
+.claude/
+.forgejo/
+grokbotfun-site/
+
+# local assets, not part of the project
+Grok Bot/
+bot-ui/
+video/
+
+*.log
