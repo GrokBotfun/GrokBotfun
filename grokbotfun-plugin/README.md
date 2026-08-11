@@ -1,20 +1,41 @@
-# GrokBotfun — agent plugin
+# GrokBotfun
 
-Deploy tokens on [pump.fun](https://pump.fun) straight from Grok Bot / Cursor.
+Deploy tokens on [pump.fun](https://pump.fun) straight from your agent.
 
-Tools provided (via the [grokbotfun](https://github.com/GrokBotfun/GrokBotfun) MCP server):
+Tell your agent the name and the ticker. It uploads the metadata, creates the
+coin and lands your dev buy in the same atomic transaction, then hands back the
+mint address and a pump.fun link.
 
-- **deploy_token** — create a coin (name, ticker, description, image, socials) with an
-  optional dev buy in the same transaction. Returns mint, tx signature and pump.fun link.
-- **wallet_info** — deploy wallet address and SOL balance.
+## Tools
+
+| Tool | Description |
+| --- | --- |
+| `deploy_token` | Creates a coin on pump.fun: uploads metadata (name, ticker, description, image, socials) to pump.fun IPFS, then builds, signs and sends the `createV2` transaction with an optional dev buy in the same transaction. Returns the mint address, transaction signature and pump.fun link. |
+| `wallet_info` | Shows the deploy wallet address and its SOL balance. |
 
 ## Setup
 
-On install you'll be asked for:
+On install you are asked for:
 
-- **Deploy wallet private key** (base58, Phantom export format) — use a **dedicated**
-  hot wallet funded only with the SOL you intend to spend. The key stays on your
-  machine and is used only to sign transactions locally.
-- **Solana RPC URL** (optional) — defaults to the public mainnet RPC.
+- **Deploy wallet private key** (base58, the format Phantom exports). Use a
+  dedicated hot wallet funded only with the SOL you intend to spend on launches.
+  The key stays on your machine and is used only to sign transactions locally.
+- **Solana RPC URL** (optional). Defaults to the public mainnet RPC; a dedicated
+  provider is recommended for production launches.
 
-Then just tell your agent: *"deploy a token named X, ticker Y, this image, 0.5 SOL dev buy"*.
+Then just say: *"deploy a token called Moon Cat, ticker MCAT, 0.5 SOL dev buy"*.
+
+## Security
+
+Self-custodial by design. Transactions are signed locally and sent to your own
+RPC endpoint. There is no backend and nobody else holds your funds. The only
+external calls are the metadata upload to pump.fun IPFS and your RPC.
+
+The dev buy is capped at 85 SOL and its maximum cost includes a slippage
+headroom, so the unspent part stays in your wallet.
+
+Source: [github.com/GrokBotfun/GrokBotfun](https://github.com/GrokBotfun/GrokBotfun)
+
+## License
+
+MIT

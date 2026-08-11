@@ -5,8 +5,8 @@
       "command": "npx",
       "args": ["-y", "grokbotfun"],
       "env": {
-        "PUMPFUN_PRIVATE_KEY": "${pumpfunPrivateKey}",
-        "SOLANA_RPC_URL": "${solanaRpcUrl}"
+        "PUMPFUN_PRIVATE_KEY": "${PUMPFUN_PRIVATE_KEY}",
+        "SOLANA_RPC_URL": "${SOLANA_RPC_URL}"
       }
     }
   }

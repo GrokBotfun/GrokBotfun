@@ -2,33 +2,54 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "grokbotfun",
   "displayName": "GrokBotfun",
-  "description": "Deploy tokens on pump.fun straight from your agent: create a coin with metadata, image and socials, with an optional dev buy in the same transaction. Signs locally with your own wallet key.",
-  "version": "0.1.0",
-  "author": { "name": "GrokBotfun" },
-  "license": "MIT",
-  "repository": "https://github.com/GrokBotfun/GrokBotfun",
+  "version": "1.0.0",
+  "minClientVersions": {
+    "cursor": "3.13.0"
+  },
+  "description": "Deploy tokens on pump.fun straight from your agent: create a coin with metadata, image and socials, with an optional dev buy in the same atomic transaction. Signs locally with your own wallet key.",
+  "author": {
+    "name": "GrokBotfun"
+  },
   "homepage": "https://github.com/GrokBotfun/GrokBotfun",
-  "keywords": ["pump.fun", "solana", "token", "deploy", "memecoin", "crypto"],
-  "category": "Crypto",
-  "tags": ["solana", "pump.fun", "web3"],
-  "mcpServers": "./mcp.json",
+  "repository": "https://github.com/GrokBotfun/GrokBotfun",
+  "license": "MIT",
+  "logo": "assets/logo.svg",
+  "keywords": [
+    "pump.fun",
+    "solana",
+    "token",
+    "deploy",
+    "memecoin",
+    "crypto",
+    "mcp"
+  ],
+  "category": "integrations",
+  "tags": [
+    "solana",
+    "pump.fun",
+    "web3",
+    "mcp"
+  ],
   "variables": {
     "type": "object",
     "properties": {
-      "pumpfunPrivateKey": {
+      "PUMPFUN_PRIVATE_KEY": {
         "type": "string",
         "title": "Deploy wallet private key (base58)",
-        "description": "Secret key of a DEDICATED hot wallet used to sign deploys. Fund it only with the SOL you intend to spend. Never use your main wallet.",
+        "description": "Secret key of a dedicated hot wallet used to sign deploys, in the base58 format exported by Phantom. Fund it only with the SOL you intend to spend on launches. Never use your main wallet.",
         "writeOnly": true,
         "minLength": 32
       },
-      "solanaRpcUrl": {
+      "SOLANA_RPC_URL": {
         "type": "string",
         "title": "Solana RPC URL",
-        "description": "Optional custom RPC endpoint (Helius/QuickNode recommended for production launches).",
+        "description": "Optional custom RPC endpoint. Defaults to the public mainnet RPC; a dedicated provider is recommended for production launches.",
         "default": "https://api.mainnet-beta.solana.com"
       }
     },
-    "required": ["pumpfunPrivateKey"]
-  }
+    "required": [
+      "PUMPFUN_PRIVATE_KEY"
+    ]
+  },
+  "mcpServers": "./mcp.json"
 }
